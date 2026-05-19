@@ -6,11 +6,11 @@ class WeatherModel {
   // using String? bc im not sure that image will be null or not
   final String? image;
 
-  final String temp;
+  final double temp;
 
-  final String maxTemp;
+  final double maxTemp;
 
-  final String minTemp;
+  final double minTemp;
 
   final String weatherCondition;
 
