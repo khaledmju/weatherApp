@@ -24,6 +24,8 @@ class SearchView extends StatelessWidget {
                 ).getCurrentWeather(cityName: value);
 
                 log(weatherModel.cityName);
+
+                Navigator.pop(context,weatherModel);
               },
               decoration: InputDecoration(
                 suffixIcon: Icon(Icons.search),
