@@ -1,7 +1,7 @@
 class WeatherModel {
   final String cityName;
 
-  final String date;
+  final DateTime date;
 
   // using String? bc im not sure that image will be null or not
   final String? image;
@@ -28,7 +28,7 @@ class WeatherModel {
     return WeatherModel(
       image: json['forecast']['forecastday'][0]['day']['condition']['icon'],
       cityName: json['location']['name'],
-      date: json['current']['last_updated'],
+      date: DateTime.parse(json['current']['last_updated']),
       temp: json['forecast']['forecastday'][0]['day']['avgtemp_c'],
       maxTemp: json['forecast']['forecastday'][0]['day']['maxtemp_c'],
       minTemp: json['forecast']['forecastday'][0]['day']['mintemp_c'],
