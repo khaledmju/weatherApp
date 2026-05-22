@@ -11,9 +11,9 @@ final class HomeViewLoading extends GetWeatherState {}
 final class HomeViewSuccess extends GetWeatherState {
 
   // this is the second way to access the weather model
-  final WeatherModel weatherModel ;
-
-  HomeViewSuccess(this.weatherModel);
+  // final WeatherModel weatherModel ;
+  //
+  // HomeViewSuccess(this.weatherModel);
 
 }
 

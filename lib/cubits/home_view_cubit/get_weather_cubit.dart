@@ -17,14 +17,20 @@ class GetWeatherCubit extends Cubit<GetWeatherState> {
   // second way we can in state of HomeViewSuccess create weather model
   // we can use both way
 
+  WeatherModel? weatherModel;
+
   getWeather({required String cityName}) async {
     emit(HomeViewLoading());
     try {
-      WeatherModel weatherModel = await WeatherService(
+      weatherModel = await WeatherService(
         Dio(),
       ).getCurrentWeather(cityName: cityName);
 
-      emit(HomeViewSuccess(weatherModel));
+      // this is for second way
+      // emit(HomeViewSuccess(weatherModel));
+
+      // this is for first way
+      emit(HomeViewSuccess());
     } catch (e) {
       emit(HomeViewFailure());
     }

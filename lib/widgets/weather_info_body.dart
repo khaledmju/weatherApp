@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weatherapp/models/weather_model.dart';
 
+import '../cubits/home_view_cubit/get_weather_cubit.dart';
+
 class WeatherInfoBody extends StatelessWidget {
-  const WeatherInfoBody({super.key, required this.weatherModel});
+  // const WeatherInfoBody({super.key, required this.weatherModel});
+  const WeatherInfoBody({super.key,});
+
+  // this is for second way
+  // final WeatherModel weatherModel;
+
 
   // if i use the first way of create the weather model in cubit
   // i can delete the line of .......... final weather weather model..............
   // and use  in widget build
-  final WeatherModel weatherModel;
 
   @override
   Widget build(BuildContext context) {
     // here i can add var weatherModel = BlocProvider.of<GetWeatherCubit>(context).weatherModel
     // and use weatherModel in widgets
     // ofc if use the first way of create weather model in GetWeatherCubit
+    WeatherModel weatherModel = BlocProvider.of<GetWeatherCubit>(context).weatherModel!;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(

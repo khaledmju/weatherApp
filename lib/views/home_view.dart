@@ -88,7 +88,7 @@ class HomeView extends StatelessWidget {
 
               //.................................................................
               // this is for second way to access the weathe model
-              weatherModel: state.weatherModel,
+              // weatherModel: state.weatherModel,
             );
           } else {
             return Text("oops there was an error ");
