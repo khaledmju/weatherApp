@@ -21,18 +21,22 @@ class MyApp extends StatelessWidget {
       // ........................ to understand what i wrote above go to Weather Course of Tharwat Samy
       // video number 49
       child: Builder(
-        builder: (context) => MaterialApp(
-          title: 'Flutter Demo',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            // appBarTheme: AppBarTheme(backgroundColor: Colors.grey),
-            primarySwatch: getWeatherCondition(
-              BlocProvider.of<GetWeatherCubit>(
-                context,
-              ).weatherModel?.weatherCondition,
-            ),
-          ),
-          home: HomeView(),
+        builder: (context) => BlocBuilder<GetWeatherCubit, GetWeatherState>(
+          builder: (context, state) {
+            return MaterialApp(
+              title: 'Flutter Demo',
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                primarySwatch: getWeatherCondition(
+                  BlocProvider.of<GetWeatherCubit>(
+                    context,
+                  ).weatherModel?.weatherCondition,
+                ),
+                useMaterial3: false,
+              ),
+              home: HomeView(),
+            );
+          },
         ),
       ),
     );
